@@ -30,10 +30,28 @@ The presence of these applications confirms the system is deliberately insecure 
 ## Quick Analysis
 The lack of authentication controls and the exposure of multiple vulnerable web applications significantly increase the attack surface. Each exposed application represents a potential entry point for further enumeration and exploitation, particularly for common web vulnerabilities such as SQL injection, command injection, file inclusion, and authentication bypass.
 
+## Technology Identification (WhatWeb)
+A WhatWeb scan was performed to identify web technologies and frameworks in use on the target system.
+
+### Command Used
+```bash
+whatweb http://172.30.1.21
+```
+### Results
+- Web Server: Apache HTTP Server 2.2.8 (Ubuntu)
+- Operating System: Ubuntu Linux
+- Programming Language: PHP 5.2.4
+- WebDAV: Enabled
+- HTTP Response: 200 OK
+- Page Title: Metasploitable2 - Linux
+
+### Analysis
+The target is running significantly outdated software components, including Apache 2.2.8 and PHP 5.2.4, both of which are known to contain multiple historical vulnerabilities. The presence of WebDAV further expands the attack surface and may allow file upload or remote file manipulation attacks if improperly configured. These findings confirm that the web server is a high-value target for further exploitation.
+
 ## Evidence
 - Screenshot: `metasploitable2_http_homepage.png`
 
 ## Next Steps
-- Identify web technologies and frameworks using WhatWeb
 - Enumerate directories and hidden resources using Gobuster
-- Select a vulnerable web application for exploitation testing
+- Perform focused enumeration against DVWA or Tomcat
+- Identify a viable exploitation path
