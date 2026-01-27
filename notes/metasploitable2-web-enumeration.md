@@ -51,7 +51,37 @@ The target is running significantly outdated software components, including Apac
 ## Evidence
 - Screenshot: `metasploitable2_http_homepage.png`
 
+## Directory Enumeration (Gobuster)
+
+A directory brute-force scan was conducted to identify hidden directories and web resources on the target system.
+
+### Command Used
+```bash
+gobuster dir -u http://172.30.1.21 -w /usr/share/wordlists/dirb/common.txt
+```
+Results
+
+The following notable directories and files were discovered:
+
+/phpMyAdmin – Database administration interface
+
+/phpinfo.php – PHP configuration information disclosure
+
+/twiki – TWiki collaboration platform
+
+/dav/ – WebDAV directory
+
+/test/ – Test directory
+
+/cgi-bin/ – Common CGI directory (restricted)
+
+/.htaccess, /.htpasswd – Protected configuration files (403 Forbidden)
+
+Analysis
+
+The discovery of multiple sensitive directories significantly increases the attack surface. The presence of phpMyAdmin and phpinfo.php may allow information disclosure or database compromise. WebDAV is of particular interest, as misconfigured WebDAV services can allow unauthorized file uploads or remote code execution. TWiki is also a known attack vector due to historical vulnerabilities.
+
 ## Next Steps
-- Enumerate directories and hidden resources using Gobuster
-- Perform focused enumeration against DVWA or Tomcat
-- Identify a viable exploitation path
+- Attempt WebDAV enumeration and file upload testing
+- Manually inspect phpMyAdmin and phpinfo.php
+- Select a viable exploitation path
