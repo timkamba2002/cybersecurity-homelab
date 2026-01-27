@@ -59,25 +59,19 @@ A directory brute-force scan was conducted to identify hidden directories and we
 ```bash
 gobuster dir -u http://172.30.1.21 -w /usr/share/wordlists/dirb/common.txt
 ```
-Results
-
+### Results
 The following notable directories and files were discovered:
 
-/phpMyAdmin – Database administration interface
+- `/phpMyAdmin` – Database administration interface  
+- `/phpinfo.php` – PHP configuration information disclosure  
+- `/twiki` – TWiki collaboration platform  
+- `/dav/` – WebDAV directory  
+- `/test/` – Test directory  
+- `/cgi-bin/` – Common CGI directory (restricted)  
+- `/.htaccess`, `/.htpasswd` – Protected configuration files (403 Forbidden)
 
-/phpinfo.php – PHP configuration information disclosure
 
-/twiki – TWiki collaboration platform
-
-/dav/ – WebDAV directory
-
-/test/ – Test directory
-
-/cgi-bin/ – Common CGI directory (restricted)
-
-/.htaccess, /.htpasswd – Protected configuration files (403 Forbidden)
-
-Analysis
+### Analysis
 
 The discovery of multiple sensitive directories significantly increases the attack surface. The presence of phpMyAdmin and phpinfo.php may allow information disclosure or database compromise. WebDAV is of particular interest, as misconfigured WebDAV services can allow unauthorized file uploads or remote code execution. TWiki is also a known attack vector due to historical vulnerabilities.
 
