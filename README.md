@@ -1,6 +1,6 @@
 # cybersecurity-homelab
 Personal cybersecurity home lab using VirtualBox, Kali Linux, and intentionally vulnerable machines to practice network configuration, scanning, enumeration, and exploitation.
-# Cybersecurity Home Lab – Beginner Series
+# Cybersecurity Home Lab
 
 ## Overview
 This repository documents my personal cybersecurity home lab built to practice offensive security and networking fundamentals in a controlled environment.
