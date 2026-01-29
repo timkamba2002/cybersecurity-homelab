@@ -34,3 +34,5 @@ Next Steps
 Service-specific enumeration
 
 Web and SMB focus
+```
+![Nmap Enumeration](../screenshots/metasploitable2_nmap_enumeration.png)
