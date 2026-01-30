@@ -191,9 +191,9 @@ cybersecurity-homelab/
 ## 📞 Contact
 
 **Timothy Kamba**  
-Aspiring SOC Analyst | Cybersecurity Student  
-📧 timothykumba2002@gmail.com  
-🔗 [LinkedIn](https://linkedin.com/in/timothy-kamba-it202502)  
+SOC Analyst | Cybersecurity Student  
+📧 timothykamba2002@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/timothy-kamba-1b3034328/)  
 💻 [GitHub](https://github.com/timkamba2002)
 
 ---
